@@ -1,0 +1,12 @@
+node_modules/
+dist/
+build/
+.next/
+.env
+server/.env
+*.log
+logs/
+server/logs/
+.DS_Store
+Thumbs.db
+

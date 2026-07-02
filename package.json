@@ -1,0 +1,13 @@
+{
+  "name": "tokenpilot",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev -w server",
+    "build:server": "npm run build -w server"
+  }
+}
+

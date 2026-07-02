@@ -1,0 +1,2 @@
+Invoke-RestMethod -Uri "http://localhost:3001/health"
+
