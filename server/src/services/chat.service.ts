@@ -1,9 +1,24 @@
-import type { ChatRequest } from "../types/index.js";
+import { RequestAnalyzerService } from "./RequestAnalyzerService.js";
+import type { RequestAnalysis } from "../models/RequestAnalysis.js";
 
-export const chatService = {
-  async create(_request: ChatRequest) {
+export type ChatResponse = {
+  success: true;
+  receivedPrompt: string;
+  timestamp: string;
+  analysis: RequestAnalysis;
+};
+
+export class ChatService {
+  constructor(private readonly requestAnalyzerService: RequestAnalyzerService) {}
+
+  async handleChat(prompt: string): Promise<ChatResponse> {
+    const analysis = await this.requestAnalyzerService.analyze(prompt);
+
     return {
-      message: "Hello from TokenPilot"
+      success: true,
+      receivedPrompt: prompt,
+      timestamp: new Date().toISOString(),
+      analysis
     };
   }
-};
+}

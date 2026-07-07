@@ -1,7 +1,19 @@
-import type { ChatRequest, ChatResponse, ProviderInfo } from "../types/index.js";
-
+/**
+ * Shared contract for every AI provider TokenPilot can talk to.
+ */
 export interface Provider {
-  info: ProviderInfo;
-  chat(request: ChatRequest): Promise<ChatResponse>;
-}
+  /**
+   * Human-readable provider name, such as OpenAI, Gemini, Ollama, or Claude.
+   */
+  name: string;
 
+  /**
+   * Default model identifier used by this provider.
+   */
+  model: string;
+
+  /**
+   * Generates a text response from the provided prompt.
+   */
+  generate(prompt: string): Promise<string>;
+}
