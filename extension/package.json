@@ -1,0 +1,60 @@
+{
+  "name": "tokenpilot-extension",
+  "displayName": "TokenPilot",
+  "description": "TokenPilot VS Code extension for code editing via the TokenPilot agent API.",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "activationEvents": [
+    "onCommand:tokenpilot.improveSelectedCode",
+    "onCommand:tokenpilot.explainCode",
+    "onCommand:tokenpilot.refactorCode",
+    "onCommand:tokenpilot.generateTests",
+    "onCommand:tokenpilot.addComments",
+    "onCommand:tokenpilot.optimizePerformance",
+    "onCommand:tokenpilot.fixBug"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tokenpilot.improveSelectedCode",
+        "title": "TokenPilot: Improve Selected Code"
+      },
+      {
+        "command": "tokenpilot.explainCode",
+        "title": "TokenPilot: Explain Code"
+      },
+      {
+        "command": "tokenpilot.refactorCode",
+        "title": "TokenPilot: Refactor Code"
+      },
+      {
+        "command": "tokenpilot.generateTests",
+        "title": "TokenPilot: Generate Tests"
+      },
+      {
+        "command": "tokenpilot.addComments",
+        "title": "TokenPilot: Add Comments"
+      },
+      {
+        "command": "tokenpilot.optimizePerformance",
+        "title": "TokenPilot: Optimize Performance"
+      },
+      {
+        "command": "tokenpilot.fixBug",
+        "title": "TokenPilot: Fix Bug"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.9.3"
+  }
+}
