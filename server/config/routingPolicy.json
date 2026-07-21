@@ -1,0 +1,8 @@
+{
+  "preferLocalModels": true,
+  "costSensitivity": 0.3,
+  "qualitySensitivity": 0.4,
+  "latencySensitivity": 0.3,
+  "confidenceThreshold": 0.5,
+  "qualityMargin": 0.05
+}

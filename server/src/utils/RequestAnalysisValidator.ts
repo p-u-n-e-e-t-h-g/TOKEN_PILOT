@@ -30,10 +30,10 @@ export function validateRequestAnalysis(value: unknown): value is RequestAnalysi
   if (
     typeof candidate.estimatedTokens !== "number" ||
     !Number.isInteger(candidate.estimatedTokens) ||
-    candidate.estimatedTokens < 50 ||
+    candidate.estimatedTokens <= 0 ||
     candidate.estimatedTokens > 4000
   ) {
-    throw new Error("Invalid request analysis: estimatedTokens must be an integer between 50 and 4000.");
+    throw new Error("Invalid request analysis: estimatedTokens must be an integer between 1 and 4000.");
   }
 
   if (!Array.isArray(candidate.preferredCapabilities) || candidate.preferredCapabilities.length === 0) {
@@ -50,6 +50,10 @@ export function validateRequestAnalysis(value: unknown): value is RequestAnalysi
 
   if (typeof candidate.requiresLongContext !== "boolean") {
     throw new Error("Invalid request analysis: requiresLongContext must be a boolean.");
+  }
+
+  if (typeof candidate.confidence !== "number" || candidate.confidence < 0 || candidate.confidence > 1) {
+    throw new Error("Invalid request analysis: confidence must be a number between 0 and 1.");
   }
 
   if (typeof candidate.reason !== "string" || candidate.reason.trim().length === 0) {

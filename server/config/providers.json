@@ -1,0 +1,14 @@
+[
+  {
+    "providerName": "Ollama",
+    "model": "qwen2.5:3b",
+    "supportsVision": false,
+    "supportsReasoning": true,
+    "supportsLongContext": true,
+    "supportsWeb": false,
+    "isLocal": true,
+    "estimatedLatencyMs": 1200,
+    "estimatedCostPerMillionTokens": 0,
+    "maxContext": 8192
+  }
+]
